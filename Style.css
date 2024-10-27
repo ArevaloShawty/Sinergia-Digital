@@ -30,6 +30,7 @@ header {
     header {
         font-size: 24px; /* Disminuir el tamaño de fuente en pantallas más pequeñas */
         padding: 0.8em; /* Ajustar el padding */
+        height: 400px; /* Ajusta la altura según tus necesidades */
     }
 }
 
@@ -37,6 +38,7 @@ header {
     header {
         font-size: 20px; /* Tamaño de fuente aún más pequeño en móviles */
         padding: 0.5em; /* Ajustar el padding */
+        height: 200px; /* Ajusta la altura según tus necesidades */
     }
 }
 
@@ -71,6 +73,18 @@ nav{
     margin-top: 34rem;
 }
 
+@media (max-width: 768px) {
+    nav{
+        margin-top: 20rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav{
+        margin-top: 10rem;
+    }
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
@@ -86,15 +100,6 @@ nav ul li {
     display: flex;
     justify-content: center;
     animation: entrardiz .8 ease;
-}
-
-@keyframes entrardiz{
-    form{
-        transform: translateX(-200%);
-    }
-    to {
-        transform: translateX(0);
-    }
 }
 
 
@@ -127,6 +132,22 @@ a {
 
 .gato:active {
     transform: translateY(0); /* Efecto al hacer clic */
+}
+
+@media (max-width: 768px) {
+    .gato{
+        height: auto;
+        width: auto;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gato{
+        height: auto;
+        width: auto;
+        font-size: 10px;
+    }
 }
 
 /* Precios */
@@ -241,17 +262,47 @@ footer{
     z-index: 9999
 }
 .rel{
-    margin-top: 0;
-   
     width: auto;
     border-radius: 30px;
     position: fixed;
-    margin-top: -8px; 
     left: 25px; 
     flex-wrap: wrap; /* Permite que los divs se ajusten a la siguiente línea */
     justify-content: space-around; /* Espacio entre columnas */
-    
+    margin-top: 10rem;
 }
+
+@media (max-width: 768px) {
+   .rel{
+    margin-top: 0px;
+   }
+   .perro{
+    margin-top: 0;
+   }
+
+   .R{
+    margin-top: 0;
+   }
+   #pa{
+    margin-top: 0;
+   }
+}
+
+@media (max-width: 480px) {
+    .rel{
+        margin-top: 0px;
+        left: 0;
+       }
+
+       .perro{
+        margin-top: 0;
+       }
+
+       .R{
+        margin-top: 0;
+       }
+
+}
+
 
 .o{
     justify-content: center;
@@ -263,25 +314,63 @@ footer{
     justify-content: center;
     justify-items: center;
     display: flex;
-    background-color: #ccccccc3;
     border-radius: 15px;
-    height: 50px;
+    height: 3.1rem;
+   width: auto;
     margin-top: 2rem;
     position: relative;
 }
 
-.perro{
-    margin-top: 8rem;
+
+#socialImage{
+    width: 200px; 
+    height: 200px;
 }
 
-.o:hover{
+@media (max-width: 768px) {
+    #socialImage{
+        width: 100px; 
+        height: 100px;
+    }
+    .R{
+        flex-direction: column; /* Esto apila los divs uno encima del otro */
+        justify-content: center;
+        align-items: center; /* Centra verticalmente */
+        display: flex;
+        height: 7rem;
+        width: auto;
+    }
+
+    #t{
+        margin-top: 0.5rem;
+    }
+    
+}
+
+@media (max-width: 480px) {
+    #socialImage{
+        width: 70px; 
+        height: 70px;
+    }
+    .R{
+        flex-direction: column; /* Esto apila los divs uno encima del otro */
+        justify-content: center;
+        align-items: center; /* Centra verticalmente */
+        display: flex;
+        height: auto;
+        width: auto;
+    }
+}
+
+
+#t:hover{
     background-color: rgb(76, 100, 207);
-    border-radius: 50%;
+    border-radius: 180%;
 }
 
-.a:hover{
+#h:hover{
     background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AD, #515BD4);
-    border-radius: 50%;
+    border-radius: 180%;
 }
 
 
@@ -364,7 +453,6 @@ h3 {
     padding: 20px;
     background-color: #f9f9f9;
     text-align: center; /* Centra el texto del encabezado */
-    position: relative;
     z-index: -1000;   /* Asegura que estén sobre otros elementos */
 }
 
@@ -388,7 +476,7 @@ h3 {
     justify-content: space-between;
     gap: 20px; /* Espacio entre los elementos */
     position: relative; /* O absolute, dependiendo de tu diseño */
-    z-index: 1;
+    
 }
 
 .conocenos-item {
@@ -431,13 +519,29 @@ h3 {
 @media (max-width: 768px) {
     .conocenos-item {
         width: calc(50% - 20px); /* 2 columnas en tablet */
+       
+    }
+    .conocenos-container{
+        flex-direction: column; /* Esto apila los divs uno encima del otro */
+        justify-content: center;
+        align-items: center; /* Centra verticalmente */
+        display: flex;
     }
 }
 
 @media (max-width: 480px) {
     .conocenos-item {
         width: 100%; /* 1 columna en móviles */
+        justify-content: center;
+        align-items: center; /* Centra verticalmente */
     }
+    .conocenos-container{
+    flex-direction: column; /* Esto apila los divs uno encima del otro */
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+    display: flex;
+    }
+    
 }
 
 
@@ -557,3 +661,37 @@ h3 {
     transition: opacity 0.3s ease;
 }
 
+/* ultima gatada */
+.menu {
+    position: relative;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    padding: 10px;
+    background-color: rgba(221, 160, 221, 0.633);
+    color: white;
+    text-align: center;
+}
+
+.R { /* Clase del contenedor */
+    display: none; /* Ocultar inicialmente */
+    background-color: #f8f9fac9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    justify-content: center;
+}
+
+
+/* Estilos para pantallas más grandes */
+@media (min-width: 600px) {
+    .R {
+        display: flex; /* Mostrar elementos en línea */
+        border: none; /* Sin borde en pantallas grandes */
+        padding: 0; /* Sin padding en pantallas grandes */
+    }
+
+    .menu-toggle {
+        display: none; /* Ocultar el botón en pantallas grandes */
+    }
+}
